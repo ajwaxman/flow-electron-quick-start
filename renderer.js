@@ -5,3 +5,12 @@
  * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
  * to expose Node.js functionality from the main process.
  */
+const nameNode = document.getElementById('name');
+nameNode.innerText = `Hello ${versions.name}`;
+
+const func = async () => {
+    const response = await window.versions.ping()
+    console.log(response);
+}
+
+func();
